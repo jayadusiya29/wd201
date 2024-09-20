@@ -28,14 +28,14 @@ const todoList = () => {
       return all.filter(item => new  Date(item.dueDate)> currentDate && !item.completed);
     }
   
-    const toDisplayableList = (list) => {
+     const toDisplayableList = (list) => {
       // Format the To-Do list here, and return the output string
       // as per the format given above.
       return list.map(item => {
         let status = item.completed ? '[x]' : '[ ]';
-        let date =new Date(item.dueDate).toDateString() ? '' : item.dueDate;
+        let date =new Date(item.dueDate).toDateString() === new Date().toDateString() ? '' : item.dueDate;
         return '${status} ${item.title} ${date}';
-      }).join('\n');
+    }).join('\n');
     }
   
     return {
