@@ -34,7 +34,7 @@ const todoList = () => {
       return list.map(item => {
         let status = item.completed ? '[x]' : '[ ]';
         let date =new Date(item.dueDate).toDateString() === new Date().toDateString() ? '' : item.dueDate;
-        return `${status} ${item.title} ${date ? ' '+date : ''}`;
+        return `${status} ${item.title} ${date ? date : ''}`;
     }).join('\n');
     }
   
